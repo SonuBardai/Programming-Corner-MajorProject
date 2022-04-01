@@ -94,7 +94,7 @@ app.get("/compile", (req, res) => {
 const pdf = require("html-pdf");
 
 app.use(bodyParser.urlencoded({ extended: true }));
-const pdfTemplate = require("./documents");
+const pdfTemplate = require("./resume_script");
 
 app.get("/resume", (req, res) => {
   res.status(200).render("resume.pug");
@@ -108,7 +108,6 @@ app.post("/create-pdf", (req, res) => {
     }
 
     res.redirect("/fetch-pdf");
-    console.log("Success");
   });
 });
 
