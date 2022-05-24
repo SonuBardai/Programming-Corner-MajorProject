@@ -13,7 +13,6 @@ router.get("/home", (req, res) => {
 });
 
 router.post("/create-pdf", (req, res) => {
-	console.log(req.body);
 	pdf.create(pdfTemplate(req.body), {}).toFile("Resume.pdf", (err) => {
 		if (err) {
 			res.send(Promise.reject());

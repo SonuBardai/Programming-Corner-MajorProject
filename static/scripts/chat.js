@@ -2,12 +2,23 @@ const socket = io("http://localhost:3000");
 
 const username = document.getElementById("username").innerText.trim();
 
-const sendMessage = () => {
+const sendMessage = async () => {
 	const messageInput = document.getElementById("message-input");
 	const message = messageInput.value;
 	if (!message) {
 		return;
 	}
+
+	await fetch("/chat/saveChat", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			username,
+			message,
+		}),
+	});
 
 	const textElement = `
     <div class="bg-white w-inherit mx-4 h-inherit text-gray-900 rounded-lg px-3 py-2 right mt-2">
@@ -25,8 +36,8 @@ const sendMessage = () => {
 	messageInput.value = "";
 
 	socket.emit("send", { username, message });
-	
-    messageContainer.scrollTop = messageContainer.scrollHeight;
+
+	messageContainer.scrollTop = messageContainer.scrollHeight;
 };
 
 const send = document
@@ -47,5 +58,10 @@ socket.on("receive", (data) => {
 
 	const messageContainer = document.getElementById("message-container");
 	messageContainer.innerHTML += textElement;
-    messageContainer.scrollTop = messageContainer.scrollHeight;
+	messageContainer.scrollTop = messageContainer.scrollHeight;
 });
+
+window.onload = function() {
+	const messageContainer = document.getElementById("message-container");
+	messageContainer.scrollTop = messageContainer.scrollHeight;
+};

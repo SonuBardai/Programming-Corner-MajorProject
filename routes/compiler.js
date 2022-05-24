@@ -35,7 +35,6 @@ router.post("/", (req, res) => {
 		.then((response) => {
 			res.send(response.data);
 			res.status(200).render("compile", { output: response.data });
-			console.log(response.data);
 		})
 		.catch((error) => {
 			console.log(error);

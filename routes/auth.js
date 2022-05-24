@@ -43,7 +43,6 @@ router.post("/register", utils.isNotAuthenticated, async (req, res) => {
 			})
 			.catch((err) => {
 				req.flash("error", err);
-				console.log("EROR AYA BHAYA ", err);
 				res.redirect("/users/register");
 				return;
 			});
@@ -69,7 +68,6 @@ router.post(
 		successFlash: true,
 	}),
 	(req, res) => {
-		console.log("BDY: ", req.body);
 		res.send(req.body);
 	}
 );
