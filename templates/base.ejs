@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProgrammingCorner - Home</title>
+    <style>
+        #logo {
+            filter: invert(1);
+            width: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="text-gray-400 bg-gray-900 body-font">
+        <div class="container mx-auto flex py-5 flex-col md:flex-row items-center">
+            <nav class="md:ml-auto md:mr-auto flex items-center text-base justify-between text-lg px-2">
+                <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0 cursor-pointer" href="/">
+                    <span class="bg-blue-500 px-2 py-2 rounded-full">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAERUlEQVR4nO3aW4hVVRjA8d+Mmo52QYNM7KEyp7KHwMiwouhmElnQPcmu0uUtMyrIt3oReujZMArpHpkVMaEVXcCgIoqCMhsoKiloVFTKW9PD2sez5rj3OWfO2WfPcdp/WLC+s/da+1vfXmt93/rOpqSkpKSkpKSkJJNjsQpfYDeGu7zsxud4PNG9Lc7D710wqFbLb1jQ6uDPwI4uGES7ZTtOb8UAH0Sd/IV7MKuVjgpmFpZjSFX/TaPtZF7UeD/OzVHBopiPfarjGNUsuDdq+FbuqhXHO6rjWJ52Q29GwxOi+rc5K1Uk30T1E9NuyDLAxKi+Lzd1iifWfWLaDVkGGCuOlvGmOkU3GeBMIeb4BVcV9dBuMsBKHINJWFLUQ7vFAH24IZI/KurB3WKA63BcUt+JDUU9uFsMcEdUfwl/F/XgThlgEh4QBtbT4N7ZuDSSn6+5fgWubaKflkj1jW0yDa9jcSLvUH9KL8OEpP49PouuXYmBpL4Od+NAbprKfwbMwEbVwcOeBm1uj+q1b78vqi/DekxtWbsU8jTAbHyMhYk8jMfUP4ktEPw/HBTecswGPB3JV+M9TG9X2Qp5GeBUwXWdlcgHcT9WN2h3Z1TfKCQwYoaxQjDkcPLbhfgUJ7Wh7yHyMMA52Iw5ibwPS7GmQbujcFMk107/mNW4S3X9z8Mn6B+tsrW0a4D5+FD19LhHmKavNtH2Ghyf1BttlAQD3Yy9iXyysOTmjkLfw2jXALcK4WuFR4Wp3Azx5veK5nz/G3g4kmfKOOc3S7sGeBG7Inm1kR4gi5k199Wb/jEX4clI3oXXmmybSrsG+AqX4M9Enoa3hfVaj6VCsARbjPT9WSwRYoJKyDyERUK6vmXy2AS/FFzf1kSeiLXC6S6LOPR9TnWHz2KZMP0rccHPOF9zhqtLXm5wUJieXydyD57CEyn3np0U0n1/LY8IS6QStX6HC/BDG/oeIs9AaBsuNvIou8rhyY347W/Cr3X6XCTsK5VzwGbB0LXxQsvkHQrvFDa39RnXJwnrv0KjzS8OeweEg9FQy9ql0InD0D+4EbcJccG70bXFggcgGOvNBn1tEP6Q6RMCq/25aqozBiCs7bS3G0//lzX2/cN4Ni+l0igyITJDiBIrNOv7O0qRBrgFk5N6s76/4xRpgIVRvRnfXwhFGuAF4eOFH/FMgc+tS9YmGP+ltDfjntEyIJz+DuDfnPpsRMvj6BdC263aPG6OMeNlHCUlJR2kXzjOjvXXXEWXnzB3Au7D9W2b8chjOrb1Cunp/yuTe41Maq4Rkg/jucRR6M5e4WBS4TLVA8t4ZAouj+QthKzLdtXNYa3xaYQpQm6hMs4h9FVybSuFJGaFQSFfN1ikhh1kjvDmT4l+WyH647VHOK2NtWsqqqyT8sFFDx4ycjmMtzKEB+PBp312MlXYDE9TTWAe6fwh5CHeV+D3RyUlJSVdz3+DHvXl6bZxwwAAAABJRU5ErkJggg=="
+                            id="logo" />
+                    </span>
+
+                    <span class="ml-3 text-xl font-mono"><a href="/">Programming Corner</a></span>
+                </a>
+
+                <a href="/blog/home" class="cursor-pointer mx-[35px] hover:text-white">Blog</a>
+                <a href="/chat" class="ursor-pointer mx-[35px] hover:text-white">Chat</a>
+                <a href="/compiler" class="ursor-pointer mx-[35px] hover:text-white">Compile</a>
+                <a href="/resume/home" class="ursor-pointer mx-[35px] hover:text-white">Resume</a>
+                <% if(!req.user) { %>
+                    <a href="/users/login"
+                        class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0 ml-3 text-lg">Login</a>
+                    <a href="/users/register"
+                        class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0 ml-3 text-lg">Register</a>
+                    <% } else { %>
+                        <a href="/users/logout"
+                            class="inline-flex items-center bg-blue-500 border-0 py-1 px-3 focus:outline-none hover:bg-blue-600 rounded text-base mt-4 md:mt-0 ml-3 text-lg text-white">Logout</a>
+                        <% } %>
+            </nav>
+        </div>
+    </header>
+
+    <body>
+        <%- body %>
+    </body>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
+</html>
