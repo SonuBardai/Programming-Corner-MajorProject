@@ -12,11 +12,11 @@
     }
 
     .left {
-        margin-right: 144px;
+        margin-right: 300px;
     }
 
     .right {
-        margin-left: 144px;
+        margin-left: 300px;
     }
 </style>
 
@@ -25,43 +25,22 @@
 
 <section class="text-gray-400 bg-gray-900 body-font">
     <div class="container px-5 py-5 mx-auto">
-
+        <span id="username" class="hidden">
+            <%=username %>
+        </span>
         <div class="bg-gray-800 flex flex-col w-full px-8 py-8 rounded-lg h-[500px]">
             <div class="relative mb-4">
-                <div class="h-[380px] w-full bg-gray-700 mb-4 rounded-lg py-4 container">
-                    <div class="bg-white w-inherit mx-4 h-inherit text-gray-900 rounded-lg px-3 py-2 left">
-                        <p class="text-blue-500 italic font-bold message mr-2">
-                            Superman
-                        </p>
-                        <span class="message">
-                            Assalamu'alaikum wa Rahmatullahi Wa Barakatuhu Brothers and Sisters and Khalas and Chichhas
-                            and
-                            Phuphus and ... etc.
-                        </span>
-                    </div>
-
-                    <div class="bg-white w-inherit mx-4 h-inherit text-gray-900 rounded-lg px-3 py-2 mt-8 right">
-                        <p class="text-blue-500 italic font-bold message mr-2 text-right">
-                            You
-                        </p>
-                        <span class="message">
-                            Wa'alaikum assalam wa Rahmatullahi Wa Barakatuhu Brothers and Sisters and Khalas and
-                            Chichhas and
-                            Phuphus and ... etc.
-                        </span>
-                    </div>
+                <div class="h-[380px] w-full bg-gray-700 mb-4 rounded-lg py-4 container" id="message-container">
                 </div>
-                <form action="" method="post">
-                    <div class="flex">
-                        <input type="text" id="name" name="name"
-                            class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out mx-2"
-                            placeholder="Enter message here...">
-                        <button
-                            class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg mx-2"
-                            type="submit">Send
-                        </button>
-                    </div>
-                </form>
+                <div class="flex">
+                    <input type="text"
+                        class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out mx-2"
+                        placeholder="Enter message here..." id="message-input" value="">
+                    <button
+                        class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg mx-2"
+                        id="send">Send
+                    </button>
+                </div>
             </div>
         </div>
 

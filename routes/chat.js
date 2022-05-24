@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const utils = require("./utils");
+const User = require("../models/user");
 
 const server = require("http").createServer(router);
 
@@ -12,14 +13,20 @@ const io = require("socket.io")(server, {
 });
 
 io.on("connection", (socket) => {
-	socket.on("new-user-joined", (name) => {
-		console.log(name);
+	socket.on("send", (data) => {
+		socket.broadcast.emit("receive", data);
 	});
 });
 
-router.get("/", utils.isAuthenticated, (req, res) => {
-	router.get("io").emit("new-user-joined", "MERA BAVA");
-	res.status(200).render("chat", { req });
+router.get("/", utils.isAuthenticated, async (req, res) => {
+	const id = req.user._conditions._id;
+	try {
+		const user = await User.findById(id);
+		const username = user.name;
+		res.status(200).render("chat", { req, username });
+	} catch (error) {
+		console.log(error);
+	}
 });
 
 router.post("/", utils.isAuthenticated, (req, res) => {});
