@@ -1,4 +1,4 @@
-<section class="text-gray-400 bg-gray-900 body-font">
+<section class=" text-gray-400 bg-gray-900 body-font">
   <div class="container px-5 pb-24 mx-auto">
     <% if(req.user){ %>
       <div class="p-2 w-full">
@@ -42,11 +42,17 @@
                                         <% } %>
                               </p>
                       </a>
-                      <div class="flex items-center flex-wrap ">
+                      <div class="flex items-center flex-wrap justify-between">
                         <a class="text-blue-400 inline-flex items-center md:mb-2 lg:mb-0"
                           href="/blog/post/<%= blogs[i].id %>" class="cursor-pointer">
                           Post by: <%= blogs[i].user.name %>
                         </a>
+                        <span class="italic text-gray-600">
+                          <%= String(blogs[i].date.getDate()).padStart(2, "0" ) + "-" + String(blogs[i].date.getMonth()
+                            + 1).padStart(2, "0" ) + "-" + blogs[i].date.getFullYear() + " " +
+                            String(blogs[i].date.getHours()).padStart(2, "0" ) + ":" +
+                            String(blogs[i].date.getMinutes()).padStart(2, "0" ) %>
+                        </span>
                       </div>
                     </div>
                   </div>

@@ -1,9 +1,38 @@
-module.exports = ({ name, email, phone, linkedin, github, skills, exp1_org, exp1_pos, exp1_desc, exp1_dur, exp2_org, exp2_pos, exp2_desc, exp2_dur,
-    proj1_title, proj1_link, proj1_desc,
-    proj2_title, proj2_link, proj2_desc,
-    edu1_school, edu1_year, edu1_qualification,
-    edu1_desc, edu2_school, edu2_year, edu2_qualification, edu2_desc,
-    extra_1, extra_2, extra_3, extra_4, extra_5 }) => {
+module.exports = ({
+    name,
+    email,
+    phone,
+    linkedin,
+    github,
+    skills,
+    exp1_org,
+    exp1_pos,
+    exp1_desc,
+    exp1_dur,
+    exp2_org,
+    exp2_pos,
+    exp2_desc,
+    exp2_dur,
+    proj1_title,
+    proj1_link,
+    proj1_desc,
+    proj2_title,
+    proj2_link,
+    proj2_desc,
+    edu1_school,
+    edu1_year,
+    edu1_qualification,
+    edu1_desc,
+    edu2_school,
+    edu2_year,
+    edu2_qualification,
+    edu2_desc,
+    extra_1,
+    extra_2,
+    extra_3,
+    extra_4,
+    extra_5,
+}) => {
     return `
       <!doctype html>
       <html>
@@ -91,6 +120,25 @@ module.exports = ({ name, email, phone, linkedin, github, skills, exp1_org, exp1
                 <p class="mt-0">${edu1_desc}</p>
           </div>
           
+          <div class="col-lg-8 mx-auto">
+              <p class="lead"><b>${edu2_school}</b> (${edu2_qualification}, ${edu2_year})</p>
+              <p class="mt-0">${edu2_desc}</p>
+        </div>
+
+        <div class="col-lg-8 mx-auto bg-light">
+              <h3><b>Extra-Curriculars/Activities</b></h3>
+        </div>
+        <div class="col-lg-8 mx-auto">
+              <ul>
+                <li><p class="lead"><b>Languages: </b>${extra_1} </p></li>
+                <li><p class="lead"><b>Hobbies: </b>${extra_2} </p></li>
+                <li><p class="lead">${extra_3} </p></li>
+                <li><p class="lead">${extra_4} </p></li>
+                <li><p class="lead">${extra_5} </p></li>
+              </ul>
+              
+        </div>
+          
               <!-- JQuery -->
               <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
               <!-- Bootstrap tooltips -->
@@ -102,4 +150,4 @@ module.exports = ({ name, email, phone, linkedin, github, skills, exp1_org, exp1
           </body>
       </html> 
     `;
-  }  
+};

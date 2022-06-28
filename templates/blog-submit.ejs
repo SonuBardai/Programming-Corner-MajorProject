@@ -1,23 +1,23 @@
 <section class="text-gray-400 bg-gray-900 body-font relative pt-12 pb-24">
-    <div class="container px-5 py-2 mx-auto">
-        <div class="flex flex-col text-center w-full mb-6">
-            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Submit Blog Post</h1>
-        </div>
+    <div class="flex flex-col text-center w-full mb-3">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-white">Submit Blog Post</h1>
+    </div>
+    <div class="container px-5 py-2 mx-auto flex flex-col justify-center items-center">
         <form method="POST" action="/blog/submit">
-            <div class="lg:w-1/2 md:w-2/3 mx-auto">
-                <div class="flex flex-wrap -m-2">
+            <div class="mx-auto">
+                <div class="flex flex-wrap justify-center items-center">
                     <div class="p-2 w-full">
-                        <div class="relative">
+                        <div class="flex flex-col">
                             <label for="title" class="leading-7 text-sm text-gray-400">Title</label>
                             <input type="text" name="title"
-                                class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out w-[970px]">
                         </div>
                     </div>
                     <div class="p-2 w-full">
-                        <div class="relative">
+                        <div class="flex flex-col">
                             <label for="content" class="leading-7 text-sm text-gray-400">Content</label>
                             <textarea id="content" name="content"
-                                class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                                class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out w-[970px] h-[800px]"></textarea>
                         </div>
                     </div>
                     <div class="p-2 w-full">
