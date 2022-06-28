@@ -15,22 +15,22 @@
                             </div>
                         </div>
                         <% } %>
-                    <% if(messages.info) { %>
-                        <div>
-                            <div class="bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4" role="alert">
-                                <p>
-                                    <%= messages.info %>
-                                </p>
-                            </div>
-                        </div>
-                        <% } %>
-                            <form method="post" action="/users/login">
-                                <label for="name" class="leading-7 text-sm text-gray-400">Username</label>
-                                <input type="text" id="name" name="name"
-                                    class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out my-2">
-                                <label for="password" class="leading-7 text-sm text-gray-400">Password</label>
-                                <input type="password" id="password" name="password"
-                                    class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out my-2">
+                            <% if(messages.info) { %>
+                                <div>
+                                    <div class="bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4" role="alert">
+                                        <p>
+                                            <%= messages.info %>
+                                        </p>
+                                    </div>
+                                </div>
+                                <% } %>
+                                    <form method="post" action="/users/login">
+                                        <label for="name" class="leading-7 text-sm text-gray-400">Username</label>
+                                        <input type="text" id="name" name="name"
+                                            class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out my-2">
+                                        <label for="password" class="leading-7 text-sm text-gray-400">Password</label>
+                                        <input type="password" id="password" name="password"
+                                            class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out my-2">
                 </div>
                 <div class="p-2 w-full">
                     <button
@@ -38,7 +38,7 @@
                 </div>
                 </form>
                 <div class="p-2 w-full pt-8 mt-8 border-t border-gray-800 text-center">
-                    <a class="text-blue-400">example@email.com</a>
+                    <a class="text-blue-400">programming@corner.com</a>
                     <p class="leading-normal my-5">49 Smith St.
                         <br>Saint Cloud, MN 56301
                     </p>

@@ -6,8 +6,10 @@ const session = require("express-session");
 const mongoose = require("mongoose");
 const passport = require("passport");
 const MongoStore = require("connect-mongo");
+const dotenv = require("dotenv");
+dotenv.config();
 
-const PORT = 80;
+const PORT = process.env.SERVER_PORT;
 
 app = express();
 
@@ -20,14 +22,14 @@ app.use(expressLayout);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
-	session({
-		secret: "secret_key",
-		resave: false,
-		saveUninitialized: false,
-		store: MongoStore.create({
-			mongoUrl: "mongodb://localhost:27017/programmingCorner",
-		}),
-	})
+    session({
+        secret: "secret_key",
+        resave: false,
+        saveUninitialized: false,
+        store: MongoStore.create({
+            mongoUrl: "mongodb://localhost:27017/programmingCorner",
+        }),
+    })
 );
 app.use(flash());
 app.use(passport.initialize());
@@ -47,14 +49,14 @@ app.use("/users", auth_router);
 app.use("/chat", chat_router);
 
 app.get("/", (req, res) => {
-	res.status(200).render("home", { req });
+    res.status(200).render("home", { req });
 });
 
 mongoose
-	.connect("mongodb://localhost:27017/programmingCorner")
-	.then(
-		app.listen(PORT, () => {
-			console.log(`Example app listening on port ${PORT}`);
-		})
-	)
-	.catch((err) => console.log(err));
+    .connect("mongodb://localhost:27017/programmingCorner")
+    .then(
+        app.listen(PORT, () => {
+            console.log(`Server running on PORT ${PORT}`);
+        })
+    )
+    .catch((err) => console.log(err));

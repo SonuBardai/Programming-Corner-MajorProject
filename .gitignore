@@ -1,3 +1,5 @@
 node_modules/
 Resume.pdf
-ABSTRACT.docx
+API_Details.md
+compiler_requests.rest
+.env
