@@ -2,3 +2,14 @@
     filter: invert(1);
     width: 30px;
 }
+*::-webkit-scrollbar {
+    width: 6px;
+    background: rgb(27, 31, 42);
+}
+*::-webkit-scrollbar-thumb {
+    background: rgb(37 99 235);
+}
+body {
+    min-height: 100vh;
+    background: rgb(17 24 39);
+}
